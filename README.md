@@ -10,7 +10,7 @@ Let's say that the streaming HLS Url in Azure media services looks like this :
 https://test-usso.streaming.media.azure.net/videosblob/test-video.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 
 Instead of using the Azure Media Services Url directly provide it as a parameter in this proxy servce:
-http://localhost:49553/api/ManifestLoad?playbackUrl=https://test-usso.streaming.media.azure.net/videosblob/test-video.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+https://spyros-hls-proxy.azurewebsites.net/api/ManifestLoad?playbackUrl=https://test-usso.streaming.media.azure.net/videosblob/test-video.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 
 Then you can use the hls.js or other player to test your video
 
