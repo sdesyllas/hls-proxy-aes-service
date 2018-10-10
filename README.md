@@ -18,7 +18,7 @@ Then you can use the hls.js or other player to test your video
 # What this service does
 This service is responsible to inject the token for every request to the video chunks that are defined inside the manifest.
 
-Let’s say the streaming URL looks like this: http://test.origin.mediaservices.windows.net/fc63efd5-93b0-435e-b4ca-50142cdbcc54/Video_asset_name.ism/Manifest(format=m3u8-aapl). 3. Azure Media Services will return the top Playlist to the Authentication system. The top playlist looks like this:
+Let’s say the streaming URL looks like this: http://test.origin.mediaservices.windows.net/fc63efd5-93b0-435e-b4ca-50142cdbcc54/Video_asset_name.ism/Manifest(format=m3u8-aapl). Azure Media Services will return the top Playlist to the Authentication system. The top playlist looks like this:
 
 ```
 #EXTM3U 
