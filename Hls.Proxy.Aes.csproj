@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +15,16 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\hlsplayer.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\hlsplayer.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
