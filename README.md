@@ -5,6 +5,14 @@ Azure Media Services provides capability for customers to generate an AES encryp
 ![](http://acom.azurecomcdn.net/80C57D/blogmedia/blogmedia/2015/03/03/architecture_thumb.png)
 
 # Basic Usage
+Let's say that the streaming HLS Url in Azure media services looks like this :
+https://test-usso.streaming.media.azure.net/1cdc8b89-1b2e-4497-a9c2-1132a075b9f9/test-video.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+Instead of using the Azure Media Services Url directly provide it as a parameter in this proxy servce:
+http://localhost:49553/api/ManifestLoad?playbackUrl=https://test-usso.streaming.media.azure.net/1cdc8b89-1b2e-4497-a9c2-1132a075b9f9/test-video.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+Then you can use the hls.js or other player to test your video
+
 
 # What this service does
 This service is responsible to inject the token for every request to the video chunks that are defined inside the manifest.
