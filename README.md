@@ -60,3 +60,7 @@ Safari now will send  request based on the URL provided in URI parameter to retr
 http://test.origin.mediaservices.windows.net/fc63efd5-93b0-435e-b4ca-50142cdbcc54/Video_asset_name.ism/QualityLevels(92405)/Fragments(AAC_und_ch2_96kbps=0,format=m3u8-aapl)
 #EXT-X-ENDLIST
 ```
+
+more information regarding this solution can be found in this blog post : 
+https://azure.microsoft.com/en-gb/blog/how-to-make-token-authorized-aes-encrypted-hls-stream-working-in-safari/
+
