@@ -1,0 +1,40 @@
+<html>
+
+  <head>
+    <title>Hls.js demo - using HLS proxy service in Azure</title>
+  </head>
+
+  <body>
+      <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+      <center>
+          <h1>Hls.js demo - using HLS proxy service in Azure</h1>
+		  <video height="600" id="video" controls></video>
+      </center>
+
+      <script>
+	         // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+       // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+       // This is using the built-in support of the plain video element, without using hls.js.
+       var video = document.getElementById('video');
+	   if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = 'http://spyros-hls-proxy.azurewebsites.net/api/ManifestLoad?playbackUrl=https://amssamples.streaming.mediaservices.windows.net/830584f8-f0c8-4e41-968b-6538b9380aa5/TearsOfSteelTeaser.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cm46bWljcm9zb2Z0OmF6dXJlOm1lZGlhc2VydmljZXM6Y29udGVudGtleWlkZW50aWZpZXIiOiI5ZGRhMGJjYy01NmZiLTQxNDMtOWQzMi0zYWI5Y2M2ZWE4MGIiLCJpc3MiOiJodHRwOi8vdGVzdGFjcy5jb20vIiwiYXVkIjoidXJuOnRlc3QiLCJleHAiOjE3MTA4MDczODl9.lJXm5hmkp5ArRIAHqVJGefW2bcTzd91iZphoKDwa6w8';
+          video.addEventListener('canplay',function() {
+            video.play();
+          });
+        }
+        else if(Hls.isSupported()) {
+		  
+          var hls = new Hls();
+          hls.loadSource('http://spyros-hls-proxy.azurewebsites.net/api/ManifestLoad?playbackUrl=https://amssamples.streaming.mediaservices.windows.net/830584f8-f0c8-4e41-968b-6538b9380aa5/TearsOfSteelTeaser.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cm46bWljcm9zb2Z0OmF6dXJlOm1lZGlhc2VydmljZXM6Y29udGVudGtleWlkZW50aWZpZXIiOiI5ZGRhMGJjYy01NmZiLTQxNDMtOWQzMi0zYWI5Y2M2ZWE4MGIiLCJpc3MiOiJodHRwOi8vdGVzdGFjcy5jb20vIiwiYXVkIjoidXJuOnRlc3QiLCJleHAiOjE3MTA4MDczODl9.lJXm5hmkp5ArRIAHqVJGefW2bcTzd91iZphoKDwa6w8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED,function() {
+            video.play();
+        });
+       }
+
+      </script>
+  </body>
+</html>
+
+
