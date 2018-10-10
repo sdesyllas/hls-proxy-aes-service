@@ -1,7 +1,7 @@
 # HLS Proxy service for AES encrypted HLS stream
 [![Build Status](https://sdesyllas.visualstudio.com/hls-proxy-aes-service/_apis/build/status/hls-proxy-aes-service-ASP.NET%20Core%20(.NET%20Framework)-CI)](https://sdesyllas.visualstudio.com/hls-proxy-aes-service/_build/latest?definitionId=2)
 
-# [See a live demo](https://spyros-hls-proxy.azurewebsites.net/hlsplayer.html)
+# [See a live demo](http://spyros-hls-proxy.azurewebsites.net/hlsplayer.html)
 
 Azure Media Services provides capability for customers to generate an AES encrypted HLS stream with Token authorization configured on the AES key retrieval. However, as we know, Safari handles HLS playlist and key retrieval within the native stack and there is no easy way for developers to intercept the key request and add in Token into the 2nd level HLS Playlist. Here is a proposed solution if you do some magic on your authentication module to make this work. Below is a diagram to illustrate how this solution works: 
 
