@@ -37,6 +37,7 @@ namespace Hls.Proxy.Aes
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
