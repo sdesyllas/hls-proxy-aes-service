@@ -9,10 +9,10 @@ Azure Media Services provides capability for customers to generate an AES encryp
 
 # Basic Usage
 Let's say that the streaming HLS Url in Azure media services looks like this :
-https://test-usso.streaming.media.azure.net/videosblob/test-video.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+https://amssamples.streaming.mediaservices.windows.net/830584f8-f0c8-4e41-968b-6538b9380aa5/TearsOfSteelTeaser.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cm46bWljcm9zb2Z0OmF6dXJlOm1lZGlhc2VydmljZXM6Y29udGVudGtleWlkZW50aWZpZXIiOiI5ZGRhMGJjYy01NmZiLTQxNDMtOWQzMi0zYWI5Y2M2ZWE4MGIiLCJpc3MiOiJodHRwOi8vdGVzdGFjcy5jb20vIiwiYXVkIjoidXJuOnRlc3QiLCJleHAiOjE3MTA4MDczODl9.lJXm5hmkp5ArRIAHqVJGefW2bcTzd91iZphoKDwa6w8
 
 Instead of using the Azure Media Services Url directly provide it as a parameter in this proxy servce:
-https://spyros-hls-proxy.azurewebsites.net/api/ManifestLoad?playbackUrl=https://test-usso.streaming.media.azure.net/videosblob/test-video.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+http://spyros-hls-proxy.azurewebsites.net/api/ManifestLoad?playbackUrl=https://amssamples.streaming.mediaservices.windows.net/830584f8-f0c8-4e41-968b-6538b9380aa5/TearsOfSteelTeaser.ism/manifest(format=m3u8-aapl)&webtoken=Bearer%3deyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cm46bWljcm9zb2Z0OmF6dXJlOm1lZGlhc2VydmljZXM6Y29udGVudGtleWlkZW50aWZpZXIiOiI5ZGRhMGJjYy01NmZiLTQxNDMtOWQzMi0zYWI5Y2M2ZWE4MGIiLCJpc3MiOiJodHRwOi8vdGVzdGFjcy5jb20vIiwiYXVkIjoidXJuOnRlc3QiLCJleHAiOjE3MTA4MDczODl9.lJXm5hmkp5ArRIAHqVJGefW2bcTzd91iZphoKDwa6w8
 
 Then you can use the hls.js or other player to test your video
 
@@ -20,7 +20,7 @@ Then you can use the hls.js or other player to test your video
 # What this service does
 This service is responsible to inject the token for every request to the video chunks that are defined inside the manifest.
 
-Let’s say the streaming URL looks like this: http://test.origin.mediaservices.windows.net/fc63efd5-93b0-435e-b4ca-50142cdbcc54/Video_asset_name.ism/Manifest(format=m3u8-aapl). Azure Media Services will return the top Playlist to the Authentication system. The top playlist looks like this:
+Let’s say the streaming URL looks like this: https://amssamples.streaming.mediaservices.windows.net/830584f8-f0c8-4e41-968b-6538b9380aa5/TearsOfSteelTeaser.ism/manifest(format=m3u8-aapl). Azure Media Services will return the top Playlist to the Authentication system. The top playlist looks like this:
 
 ```
 #EXTM3U 
