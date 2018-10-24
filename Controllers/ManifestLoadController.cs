@@ -8,7 +8,6 @@ namespace Hls.Proxy.Aes.Controllers
     public class ManifestLoadController : Controller
     {
         private const string ManifestProxyUrlTemplate = "http://{0}:{1}/api/ManifestProxy";
-
         private readonly ITopLevelManifestRetriever _topLevelManifestRetriever;
 
         public ManifestLoadController(ITopLevelManifestRetriever topLevelManifestRetriever)
@@ -21,9 +20,7 @@ namespace Hls.Proxy.Aes.Controllers
             if (playbackUrl == null || webtoken == null)
                 return BadRequest("playbackUrl or webtoken cannot be empty");
             var token = webtoken;
-
             var modifiedTopLeveLManifest = _topLevelManifestRetriever.GetTopLevelManifestForToken(GetManifestProxyUrl(), playbackUrl, token);
-
             var response = new ContentResult
             {
                 Content = modifiedTopLeveLManifest,
