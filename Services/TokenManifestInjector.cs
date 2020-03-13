@@ -12,7 +12,6 @@ namespace Hls.Proxy.Aes.Services
             const string fragmentsRegex = @"(Fragments\([\w\d=-]+,[\w\d=-]+\))";
             const string urlRegex =
                 @"("")(https?:\/\/[\da-z\.-]+\.[a-z\.]{2,6}[\/\w \.-]*\/?[\?&][^&=]+=[^&=#]*)("")";
-
             var baseUrl = playbackUrl.Substring(0,
                               playbackUrl.IndexOf(".ism", StringComparison.OrdinalIgnoreCase)) +
                           ".ism";
