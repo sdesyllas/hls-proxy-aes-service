@@ -39,6 +39,7 @@ namespace Hls.Proxy.Aes.Controllers
             var hostPortion = Request.GetUri().Host;
             var port = Request.GetUri().Port == 80 ? string.Empty : Request.GetUri().Port.ToString();
             var manifestProxyUrl = string.Format(ManifestProxyUrlTemplate, hostPortion, port);
+
             return manifestProxyUrl;
         }
     }
